@@ -1,0 +1,95 @@
+.principal {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.principal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: none;
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 6px 0;
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  height: 0px;
+  min-height: 100%;
+  overflow-y: auto;
+  gap: 1.2rem;
+}
+
+.task {
+  display: flex;
+  background-color: var(--secondary);
+  border-radius: 8px;
+  padding: 0.8rem;
+  justify-content: space-between;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.task > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-remove-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  color: var(--text);
+}
+
+.task-remove-btn:hover {
+  background-color: var(--primary);
+}
+
+.completed {
+  opacity: 0.5;
+}
+
+.addtask-section {
+  display: flex;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.task-title-input {
+  width: 100%;
+  border: 1px solid var(--accent);
+}
+
+.addtask-btn {
+  cursor: pointer;
+}
+
+.addtask-btn,
+.task-title-input {
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  outline: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 700px) {
+  .menu-icon {
+    display: block;
+  }
+}

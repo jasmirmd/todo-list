@@ -1,0 +1,144 @@
+.sidebar {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border-right: 2px solid var(--accent);
+  background-color: var(--bg);
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-projects-header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid var(--accent);
+}
+
+.sidebar-projects-header h1 {
+  padding: 0.2rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  height: 0px;
+  min-height: 100%;
+  overflow-y: auto;
+  gap: 0.6rem;
+  padding: 1rem;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+.project:hover {
+  background-color: var(--secondary);
+}
+
+.removable button {
+  cursor: pointer;
+  font-size: 0.8rem;
+  border: none;
+  text-align: center;
+  background-color: transparent;
+  color: var(--text);
+}
+
+.removable button:hover {
+  background-color: var(--primary);
+  border-radius: 5px;
+}
+
+.selected {
+  background-color: var(--secondary);
+}
+
+.addproject-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-name-dialog {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  animation-duration: 0.3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(100vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.project-name-dialog label input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--accent);
+  outline: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.project-name-input-btns {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.project-name-input-btns button {
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--text);
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  padding: 0 0.5rem;
+}
+
+.addproject-btn {
+  cursor: pointer;
+  width: 100%;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 0px;
+  border-top: 2px solid var(--accent);
+  animation-duration: 0.4s;
+  animation-name: slidein;
+  background-color: var(--primary);
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 700px) {
+  .sidebar {
+    position: absolute;
+    height: 100vh;
+    width: 220px;
+  }
+}
+
+.sidebar {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 700px) {
+  .sidebar.hidden {
+    transform: translateX(-250px);
+    opacity: 0;
+  }
+}
